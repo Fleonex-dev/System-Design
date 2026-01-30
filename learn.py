@@ -48,6 +48,15 @@ COURSE = [
         "title": "🧩 Low Level Design (LLD)",
         "path": "02_lld_principles",
         "lessons": [
+            {
+                "title": "📐 Design Patterns (Deep Dive)",
+                "type": "submodule",
+                "path": "design_patterns",
+                "lessons": [
+                    {"file": "01_adapter_facade.py", "title": "Adapter & Facade (Wrappers)"},
+                    {"file": "02_composite_pattern.py", "title": "Composite (Trees)"},
+                ]
+            },
             {"file": "01_solid_agents.py", "title": "SOLID Principles"},
             {"file": "02_factory.py", "title": "Factory Pattern"},
             {"file": "03_strategy.py", "title": "Strategy Pattern"},
@@ -60,6 +69,16 @@ COURSE = [
         "title": "☁️ High Level Design (HLD)",
         "path": "03_hld_concepts",
         "lessons": [
+            {
+                "title": "💾 Distributed Data (Interviews)",
+                "type": "submodule",
+                "path": "distributed_data",
+                "lessons": [
+                    {"file": "01_replication_lag.py", "title": "Replication Lag (Consistency)"},
+                    {"file": "03_cap_theorem.py", "title": "CAP Theorem Simulation"},
+                    {"file": "04_distributed_locking.py", "title": "Distributed Locks (Redis)"},
+                ]
+            },
             {"file": "01_llm_load_balancing.py", "title": "Load Balancing"},
             {"file": "02_semantic_caching.py", "title": "Semantic Caching"},
             {"file": "03_consistent_hashing.py", "title": "Consistent Hashing"},
@@ -72,6 +91,15 @@ COURSE = [
         "title": "🧠 Advanced AI Architecture",
         "path": "04_advanced_ai_arch",
         "lessons": [
+            {
+                "title": "✂️ RAG Deep Dive (Chunking/Vectors)",
+                "type": "submodule",
+                "path": "rag_deep_dive",
+                "lessons": [
+                    {"file": "01_chunking_strategies.py", "title": "Chunking Strategies"},
+                    {"file": "02_vector_indexing.py", "title": "Vector Indexing (HNSW)"},
+                ]
+            },
             {"file": "01_rag_pipeline_optimization.py", "title": "RAG Optimization"},
             {"file": "02_agent_orchestrator.py", "title": "Agent Orchestration"},
             {"file": "03_inference_optimization.py", "title": "Speculative Decoding"},
@@ -85,6 +113,15 @@ COURSE = [
         "title": "💼 Interview Prep",
         "path": "05_interview_prep",
         "lessons": [
+            {
+                "title": "🧱 Common Components",
+                "type": "submodule",
+                "path": "common_components",
+                "lessons": [
+                    {"file": "01_notification_service.py", "title": "Notification System (Pub/Sub)"},
+                    {"file": "02_distributed_scheduler.py", "title": "Distributed Scheduler (Cron)"},
+                ]
+            },
             {"file": "Q1_RateLimiter/optimal.py", "title": "Q1: Rate Limiter"},
             {"file": "Q2_URLShortener/optimal.py", "title": "Q2: URL Shortener"},
             {"file": "Q3_WebCrawler/optimal.py", "title": "Q3: Web Crawler"}
