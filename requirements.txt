@@ -4,3 +4,4 @@ rich
 pytest
 pytest-xdist
 pylint
+pydantic
