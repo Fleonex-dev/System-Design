@@ -39,9 +39,10 @@ Crush the System Design Interview.
 
 ---
 ## 🚀 How to use this repo
-1.  **Read the README** in each folder first.
-2.  **Run the `bad.py`** example to see it fail (or be slow).
-3.  **Run the `good.py`** example to see the fix.
-4.  **Solve the `challenge.py`** at the end of each section.
+1.  **Setup**: Run `make setup`.
+2.  **Start**: Run `make run`.
+3.  **Clean**: Run `make clean` to reset.
+
+Happy Coding!
 
 Happy Coding!
