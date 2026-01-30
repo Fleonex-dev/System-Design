@@ -3,14 +3,6 @@
 ![Build Status](https://github.com/Fleonex-dev/System-Design/actions/workflows/ci.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)
 
-> **"Show, Don't Just Tell."**
-> A personal collection of verifiable, code-first System Design patterns in Python.
-> Simulate Distributed Systems, Scalability, and Real-World Architectures for Backend Engineering.
-
-Most System Design resources are static diagrams. This repository aims to make these concepts **executable** to understand how they actually work under the hood.
-I built this to educate myself on **Race Conditions**, **Database Sharding**, **Consistent Hashing**, and **Distributed Transactions** by simulating them in Python.
-
-
 ---
 
 ## 🚀 What's Inside?
