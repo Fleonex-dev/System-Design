@@ -62,20 +62,27 @@ COURSE = [
         "path": "02_lld_principles",
         "lessons": [
             {"file": "00_oop_primer.py", "title": "0. OOP Primer (Interfaces & Polymorphism)"},
+            {"file": "01_solid_agents.py", "title": "1. SOLID Principles"},
+            {"file": "02_composition_over_inheritance.py", "title": "2. Composition over Inheritance"},
             {
-                "title": "📐 Design Patterns (Deep Dive)",
+                "title": "📐 Design Patterns (Categorized)",
                 "type": "submodule",
                 "path": "design_patterns",
                 "lessons": [
-                    {"file": "01_adapter_facade.py", "title": "Adapter & Facade (Wrappers)"},
-                    {"file": "02_composite_pattern.py", "title": "Composite (Trees)"},
-                    {"file": "03_singleton_thread_safe.py", "title": "Singleton (Thread Safe)"},
+                    # CREATIONAL
+                    {"file": "creational_factory.py", "title": "Creational: Factory (Object Creation)"},
+                    {"file": "creational_builder.py", "title": "Creational: Builder (Complex Configs)"},
+                    {"file": "creational_singleton.py", "title": "Creational: Singleton (Global State)"},
+                    # STRUCTURAL
+                    {"file": "structural_adapter_facade.py", "title": "Structural: Adapter & Facade"},
+                    {"file": "structural_composite.py", "title": "Structural: Composite (Trees)"},
+                    # BEHAVIORAL
+                    {"file": "behavioral_strategy.py", "title": "Behavioral: Strategy (Algorithms)"},
+                    {"file": "behavioral_observer.py", "title": "Behavioral: Observer (Events)"},
+                    {"file": "behavioral_state.py", "title": "Behavioral: State (Workflow)"},
+                    {"file": "behavioral_chain.py", "title": "Behavioral: Chain of Responsibility (Middleware)"},
                 ]
             },
-            {"file": "01_solid_agents.py", "title": "1. SOLID Principles"},
-            {"file": "02_factory.py", "title": "2. Factory Pattern"},
-            {"file": "03_strategy.py", "title": "3. Strategy Pattern"},
-            {"file": "04_observer.py", "title": "4. Observer Pattern"},
             {"file": "challenge_solution.py", "title": "🏆 Capstone Challenge Solution"}
         ]
     },
