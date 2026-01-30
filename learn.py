@@ -29,11 +29,21 @@ COURSE = [
                 "lessons": [
                     {"file": "01_threads_vs_processes.py", "title": "1. Threads vs Processes (The GIL)"},
                     {"file": "02_async_io.py", "title": "2. AsyncIO (Event Loop)"},
-                    {"file": "03_race_conditions.py", "title": "3. Race Conditions (Locks)"},
+                    {"file": "03_race_conditions.py", "title": "3. Race Conditions (Async Locks)"},
                     {"file": "04_producer_consumer.py", "title": "4. Producer-Consumer (Queues)"},
                     {"file": "05_build_event_loop.py", "title": "5. Build an Event Loop (Internals)"},
-                    {"file": "06_cpu_offloading.py", "title": "6. CPU Offloading (Blocking code)"},
-                    {"file": "07_structured_concurrency.py", "title": "7. Structured Concurrency (TaskGroups)"},
+                    {"file": "06_cpu_offloading.py", "title": "6. CPU Offloading (ProcessPool)"},
+                    {"file": "07_structured_concurrency.py", "title": "7. Structured Concurrency (TaskGroup)"},
+                ]
+            },
+            {
+                "title": "🚦 Thread Safety (OS Threads)",
+                "type": "submodule",
+                "path": "thread_safety",
+                "lessons": [
+                    {"file": "01_race_condition_threading.py", "title": "Race Condition (Bytecode Proof)"},
+                    {"file": "02_primitives.py", "title": "Primitives (Lock, RLock, Semaphore)"},
+                    {"file": "03_deadlocks.py", "title": "Deadocks (Dining Philosophers)"},
                 ]
             },
             {"file": "02_typing.py", "title": "Typing (Pydantic vs Dicts)"},
@@ -55,6 +65,7 @@ COURSE = [
                 "lessons": [
                     {"file": "01_adapter_facade.py", "title": "Adapter & Facade (Wrappers)"},
                     {"file": "02_composite_pattern.py", "title": "Composite (Trees)"},
+                    {"file": "03_singleton_thread_safe.py", "title": "Singleton (Thread Safe)"},
                 ]
             },
             {"file": "01_solid_agents.py", "title": "SOLID Principles"},
@@ -79,6 +90,14 @@ COURSE = [
                     {"file": "04_distributed_locking.py", "title": "Distributed Locks (Redis)"},
                 ]
             },
+            {
+                "title": "🔩 Database Internals",
+                "type": "submodule",
+                "path": "database_internals",
+                "lessons": [
+                    {"file": "01_acid_transactions.py", "title": "ACID (Atomicity & Isolation)"},
+                ]
+            },
             {"file": "01_llm_load_balancing.py", "title": "Load Balancing"},
             {"file": "02_semantic_caching.py", "title": "Semantic Caching"},
             {"file": "03_consistent_hashing.py", "title": "Consistent Hashing"},
@@ -100,9 +119,17 @@ COURSE = [
                     {"file": "02_vector_indexing.py", "title": "Vector Indexing (HNSW)"},
                 ]
             },
+            {
+                "title": "📉 AI Optimization",
+                "type": "submodule",
+                "path": "optimization",
+                "lessons": [
+                    {"file": "01_quantization.py", "title": "Quantization (FP32->INT8)"},
+                    {"file": "03_inference_optimization.py", "title": "Speculative Decoding (Moved)"},
+                ]
+            },
             {"file": "01_rag_pipeline_optimization.py", "title": "RAG Optimization"},
             {"file": "02_agent_orchestrator.py", "title": "Agent Orchestration"},
-            {"file": "03_inference_optimization.py", "title": "Speculative Decoding"},
             {"file": "04_mixture_of_experts.py", "title": "Mixture of Experts"},
             {"file": "05_reasoning_search.py", "title": "Reasoning (Tree of Thoughts)"},
             {"file": "challenge_solution.py", "title": "🏆 Capstone Challenge Solution"}
