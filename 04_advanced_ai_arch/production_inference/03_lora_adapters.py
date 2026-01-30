@@ -52,3 +52,5 @@ if __name__ == "__main__":
     print(f"Code Output:  {res_code:.2f} (Base + 2.0x)")
     
     print("\n🏆 Insight: Swapping LoRA adapters takes milliseconds. Swapping full models takes minutes.")
+    print("   🏢 Real World: **Apple Intelligence** runs a foundational model on-device and swaps Adapters for 'Mail', 'Siri', 'Summarization'.")
+    print("   **Azure OpenAI** uses this for 'Finetuning'—they don't copy GPT-4 for you; they just add your tiny LoRA layer.")

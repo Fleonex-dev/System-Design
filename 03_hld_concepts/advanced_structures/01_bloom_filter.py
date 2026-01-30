@@ -47,3 +47,7 @@ if __name__ == "__main__":
     # In a tiny array of size 20, collisions are likely
     # Real BF uses size ~ Millions
     print(f"Bit Array: {bf.bit_array}")
+    
+    print("\n🏆 Insight: Very fast, very small memory footprint.")
+    print("   🏢 Real World: **Google Chrome** uses it to check malicious URLs locally.")
+    print("   **Cassandra/DynamoDB** use it to skip checking disk SSTables if a key doesn't exist.")

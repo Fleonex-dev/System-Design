@@ -56,3 +56,5 @@ if __name__ == "__main__":
         
     print("\n🏆 Insight: The 'Action' user has a much higher dot-product with 'Die Hard'.")
     print("   In prod, we use FAISS/Annoy to find these top matches from Billions.")
+    print("   🏢 Real World: **YouTube** uses this for 'Candidate Generation' (filtering 5B videos -> 100).")
+    print("   **Netflix** uses it to personalize the homepage rows. **TikTok** uses it for the 'For You' feed.")

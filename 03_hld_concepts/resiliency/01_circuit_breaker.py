@@ -63,6 +63,10 @@ def run_simulation():
         print(f"\nRequest {i+1}:")
         cb.call(risky_service)
         time.sleep(0.5)
+        
+    print("\n🏆 Insight: The Breaker stops us from spamming a dead service.")
+    print("   🏢 Real World: Popularized by **Netflix Hystrix** (Java) and **Resilience4j**.")
+    print("   Used heavily in **Uber's** microservice mesh to prevent 'Cascading Failure'.")
 
 if __name__ == "__main__":
     run_simulation()

@@ -77,6 +77,8 @@ def run_simulation():
             
     print("\n🏆 Insight: Notice 'Short-C' entered while 'Long-A' was still running.")
     print("   This increases GPU utilization by 20-50%.")
+    print("   🏢 Real World: Implemented in **vLLM** (Berkeley), **HuggingFace TGI**, and **Ray Serve**.")
+    print("   Used by **AnyScale** and **Microsoft Azure** to maximize A100 efficiency.")
 
 if __name__ == "__main__":
     run_simulation()

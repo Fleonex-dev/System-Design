@@ -48,6 +48,7 @@ def run_simulation():
     
     print("\n🏆 Insight: KV Cache is mandatory for Chatbots. 8k context without cache = Unusable latency.")
     print("   But it eats VRAM. 1 Token = 2 * Layers * Heads * Dim * Precision bytes.")
+    print("   🏢 Real World: This is why OpenAI limits context windows. A 128k context request takes gigabytes of RAM just for the cache!")
 
 if __name__ == "__main__":
     run_simulation()
