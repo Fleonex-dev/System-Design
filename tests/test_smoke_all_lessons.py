@@ -56,17 +56,19 @@ def test_simulation_runs_without_crashing(filepath):
         # We assume python3 is available. Using sys.executable ensures we use the same venv.
         # Timeout: Some scripts run for 5-10 seconds (simulated delays).
         # We give a generous 30s buffer.
+        # Use the fast_runner.py wrapper to mock sleep/input
+        runner_path = os.path.join(os.getcwd(), "tests/fast_runner.py")
+        
         subprocess.run(
-            [sys.executable, filepath], 
+            [sys.executable, runner_path, filepath], 
             check=True, 
             capture_output=True, 
-            timeout=30,
-            cwd=os.path.dirname(filepath) # Run from the file's dir to resolve local imports if any
+            timeout=10, # Reduced timeout since sleeps are mocked!
+            cwd=os.path.dirname(filepath)
         )
     except subprocess.TimeoutExpired:
-        pytest.fail(f"Script {relative_path} timed out after 30s.")
+        pytest.fail(f"Script {relative_path} timed out after 10s.")
     except subprocess.CalledProcessError as e:
         stderr = e.stderr.decode()
         stdout = e.stdout.decode()
         pytest.fail(f"Script {relative_path} crashed with Exit Code {e.returncode}.\nSTDOUT:\n{stdout}\nSTDERR:\n{stderr}")
-

@@ -30,4 +30,7 @@ if __name__ == "__main__":
         bank.charge(10)
     except:
         print("   ⚠️ Timeout. Retrying...")
-        bank.charge(10) # DANGER
+        try:
+            bank.charge(10) # DANGER
+        except:
+            print("   ❌ Second Attempt Failed (Simulated Crash).")
