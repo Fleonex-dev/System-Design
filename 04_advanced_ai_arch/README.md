@@ -6,9 +6,17 @@ This module moves beyond basic chatbots into the **cutting-edge architectures** 
 
 ## 🎓 Concepts Covered
 
-### 1. RAG Optimization (Beyond Vector Search)
-* **The Problem**: A user asks "What is the capital of the moon?". Vector search finds a random sci-fi book. The LLM hallucinates "Luna City".
-* **The Solution**: **HyDE** (Hypothetical Document Embeddings) generating a fake answer to search for, and **Re-ranking** (Cross-Encoders) to verify relevance.
+### 1. LLM Mechanics (The Transformer)
+*   **Concept**: Predicting the next token based on Attention.
+*   **KV Cache**: Why we cache Key/Value matrices to avoid re-computing the past.
+
+### 2. Embeddings (What is a Vector?)
+*   **Concept**: Representing "Meaning" as a list of numbers.
+*   **Math**: Cosine Similarity. `Dog` is closer to `Wolf` than `Car`.
+
+### 3. RAG Optimization (Beyond Vector Search)
+* **The Problem**: Simple vector search retrieves irrelevant chunks.
+* **The Solution**: **HyDE** (Hallucinate an answer, search for that) and **Cross-Encoding** (Re-rank results).
 
 ### 2. Agent Orchestration (Reliable Autonomy)
 * **The Problem**: You give an agent a loop. It gets stuck saying "Thinking..." forever.

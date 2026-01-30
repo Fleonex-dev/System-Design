@@ -6,21 +6,32 @@ This module covers **System Design** concepts required to scale from 1 user (Loc
 
 ## 🎓 Concepts Covered
 
-### 1. Load Balancing (The Traffic Cop)
-* **The Problem**: You have 3 GPU servers. Server A is processing a 10s prompt. Servers B and C are idle. A Round-Robin router sends the next request to A anyway. A crashes.
-* **The Solution**: **Least-Connections** or **KV-Cache Aware** routing. Send traffic to the idle workers.
+### 1. Scaling 101 (Vertical vs Horizontal)
+* **The Problem**: Your single server crashes when 100 users hit it.
+*   **Vertical Scaling**: Buy a bigger machine ($$$). Limit: Physics.
+*   **Horizontal Scaling**: Buy 10 cheap machines. Limit: Infinite.
 
-### 2. Caching (The Speed Boost)
-* **The Problem**: 50% of your user queries are "Hello" or "Which model is this?". Generating these via GPT-4 takes 2s and costs $0.03.
-* **The Solution**: **Semantic Caching**. Embed the query, check Vector DB. If similarity > 0.99, return cached answer. Time: 50ms. Cost: $0.
+### 2. Load Balancing (The Traffic Cop)
+* **The Problem**: Server A is busy, B is idle. Round-Robin blindly sends to A.
+* **The Solution**: **Least-Connections**. Send query to the node with fewest active requests.
 
-### 3. Consistent Hashing (The Sharding Key)
-* **The Problem**: You store Vectors in 3 nodes. You add a 4th node. If using `hash(key) % N`, you have to move 100% of data. System goes down for days.
-* **The Solution**: **Consistent Hashing Ring**. Only 1/N keys need moving.
+### 3. Caching (KV & Semantic)
+* **The Problem**: Generating tokens is slow (50ms/token).
+* **The Solution**:
+    *   **Semantic Cache**: Vector Similarity check.
+    *   **KV Cache**: Store attention matrices.
 
-### 4. Distributed IDs (Uniqueness at Scale)
-* **The Problem**: Using `id++` (Auto Increment) in MySQL doesn't work when you have 5 DB masters.
-* **The Solution**: **Snowflake IDs**. Time + MachineID + Sequence.
+### 4. Consistent Hashing (The Ring)
+* **The Problem**: Adding a node to a hash map (`key % N`) reshuffles all keys.
+* **The Solution**: **Virtual Nodes** on a Ring. Only K/N keys move.
+
+### 5. Distributed IDs (Snowflake)
+* **The Problem**: Auto-increment IDs fail in multi-master DBs.
+* **The Solution**: **Snowflake ID**. Time + Machine + Sequence.
+
+### 6. gRPC vs REST (Protobufs)
+*   **The Problem**: JSON is slow (text parsing). HTTP/1.1 is serial.
+*   **The Solution**: **gRPC**. Binary format (Protobuf), Multiplexing (HTTP/2), Strict Typing. 10x faster.
 
 ---
 

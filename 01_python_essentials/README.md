@@ -17,9 +17,17 @@ This module covers the **foundational Python concepts** that separate a "scripti
 * **The Problem**: Big dictionaries (`{...}`) are convenient but dangerous. One typo in a key name crashes production 3 months later.
 * **The Solution**: **Pydantic**. It forces structure, validates data at the door (ingress), and gives you autocomplete in IDEs.
 
-### 3. Generators
-* **The Problem**: `return [list]` loads everything into RAM. If the dataset is 100GB, your server dies (OOM).
-* **The Solution**: `yield`. Process one item at a time. This is how **LLM Streaming** works!
+### 3. Generators (`yield`)
+* **The Problem**: Loading a 100GB CSV into a list crashes RAM.
+* **The Solution**: Process one row at a time. Essential for **Streaming Responses**.
+
+### 4. Context Managers (`with`)
+*   **The Problem**: Forgetting to close a file or release a Lock causes leaks/deadlocks.
+*   **The Solution**: `__enter__` and `__exit__`. Auto-cleanup resources (like DB connections).
+
+### 5. Decorators (`@wrapper`)
+*   **The Problem**: Copy-pasting "Logging" or "Timing" code into 50 functions.
+*   **The Solution**: Higher-Order Functions. Wrap logic (like `@retry`, `@lru_cache`) transparently.
 
 ---
 
