@@ -94,4 +94,4 @@ Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for de
 
 ---
 
-*Created for self-education and shared for the community.*
+*Created for self-education and shared for the community*
