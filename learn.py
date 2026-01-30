@@ -61,6 +61,7 @@ COURSE = [
         "title": "🧩 Low Level Design (LLD)",
         "path": "02_lld_principles",
         "lessons": [
+            {"file": "00_oop_primer.py", "title": "0. OOP Primer (Interfaces & Polymorphism)"},
             {
                 "title": "📐 Design Patterns (Deep Dive)",
                 "type": "submodule",
@@ -71,10 +72,10 @@ COURSE = [
                     {"file": "03_singleton_thread_safe.py", "title": "Singleton (Thread Safe)"},
                 ]
             },
-            {"file": "01_solid_agents.py", "title": "SOLID Principles"},
-            {"file": "02_factory.py", "title": "Factory Pattern"},
-            {"file": "03_strategy.py", "title": "Strategy Pattern"},
-            {"file": "04_observer.py", "title": "Observer Pattern"},
+            {"file": "01_solid_agents.py", "title": "1. SOLID Principles"},
+            {"file": "02_factory.py", "title": "2. Factory Pattern"},
+            {"file": "03_strategy.py", "title": "3. Strategy Pattern"},
+            {"file": "04_observer.py", "title": "4. Observer Pattern"},
             {"file": "challenge_solution.py", "title": "🏆 Capstone Challenge Solution"}
         ]
     },
@@ -83,6 +84,7 @@ COURSE = [
         "title": "☁️ High Level Design (HLD)",
         "path": "03_hld_concepts",
         "lessons": [
+            {"file": "00_scaling_101.py", "title": "0. Scaling 101 (Vertical vs Horizontal)"},
             {
                 "title": "💾 Distributed Data (Interviews)",
                 "type": "submodule",
@@ -101,10 +103,10 @@ COURSE = [
                     {"file": "01_acid_transactions.py", "title": "ACID (Atomicity & Isolation)"},
                 ]
             },
-            {"file": "01_llm_load_balancing.py", "title": "Load Balancing"},
-            {"file": "02_semantic_caching.py", "title": "Semantic Caching"},
-            {"file": "03_consistent_hashing.py", "title": "Consistent Hashing"},
-            {"file": "04_distributed_id.py", "title": "Distributed IDs"},
+            {"file": "01_llm_load_balancing.py", "title": "1. Load Balancing"},
+            {"file": "02_semantic_caching.py", "title": "2. Semantic Caching"},
+            {"file": "03_consistent_hashing.py", "title": "3. Consistent Hashing"},
+            {"file": "04_distributed_id.py", "title": "4. Distributed IDs"},
             {"file": "challenge_solution.py", "title": "🏆 Capstone Challenge Solution"}
         ]
     },
@@ -113,6 +115,8 @@ COURSE = [
         "title": "🧠 Advanced AI Architecture",
         "path": "04_advanced_ai_arch",
         "lessons": [
+            {"file": "00_what_is_a_vector.py", "title": "0A. What is a Vector? (Embeddings)"},
+            {"file": "00_llm_mechanics.py", "title": "0B. LLM Mechanics (Probabilities)"},
             {
                 "title": "✂️ RAG Deep Dive (Chunking/Vectors)",
                 "type": "submodule",
