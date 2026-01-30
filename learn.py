@@ -27,6 +27,9 @@ COURSE = [
                 "type": "submodule",
                 "path": "concurrency", # Relative to parent path
                 "lessons": [
+                    {"file": "00_intro_threading.py", "title": "0A. Threading Basics (Lifecycle)"},
+                    {"file": "00_intro_multiprocessing.py", "title": "0B. Multiprocessing Basics (Isolation)"},
+                    {"file": "00_intro_async.py", "title": "0C. Async Basics (Coroutines)"},
                     {"file": "01_threads_vs_processes.py", "title": "1. Threads vs Processes (The GIL)"},
                     {"file": "02_async_io.py", "title": "2. AsyncIO (Event Loop)"},
                     {"file": "03_race_conditions.py", "title": "3. Race Conditions (Async Locks)"},
