@@ -1,46 +1,77 @@
-# System Design for AI & LLM Engineering
-> *Learn High Level Design (HLD), Low Level Design (LLD), and Advanced AI Architectures through hands-on Python Code.*
+# 🏗️ Interactive System Design Masterclass
 
-## 📚 Course Structure
+> **"Show, Don't Just Tell."**
+> A hands-on, code-first course to master scalable systems, tailored for Senior Engineering Interviews.
 
-This repository is designed to take you from **Zero to Production-Ready AI Architect**.
-Each module contains a **Teacher Guide (README)**, **Bad Code (The Screw-up)**, and **Good Code (The Fix)**.
-
-### 🐍 [01_python_essentials](./01_python_essentials)
-Master the Python concepts that keep servers alive under load.
-- **Concurrency**: Asyncio vs Threading.
-- **Robustness**: Pydantic & Type Hinting.
-- **Performance**: Generators & decorators.
-- **Challenge**: Refactor a broken, blocking API.
-
-### 🧩 [02_lld_principles](./02_lld_principles)
-Write clean, modular code for AI Agents.
-- **SOLID**: Applied to Agent/Tool interfaces.
-- **Patterns**: Factory, Observer, Strategy, Adapter.
-- **Challenge**: Refactor a "God Object" Chatbot.
-
-### ☁️ [03_hld_concepts](./03_hld_concepts)
-Scale your systems to millions of users.
-- **Scaling**: Load Balancing, Rate Limiting, Caching.
-- **Distributed Systems**: CAP Theorem, Consistent Hashing.
-- **Challenge**: Scale an API to 10k RPS.
-
-### 🧠 [04_advanced_ai_arch](./04_advanced_ai_arch)
-Build State-of-the-Art AI Systems (Gemini/GPT-4 style).
-- **Inference**: Speculative Decoding.
-- **Architecture**: Mixture of Experts (MoE).
-- **Reasoning**: Tree of Thoughts / MCTS.
-- **Challenge**: Build an AGI Prototype.
-
-### 💼 [05_interview_prep](./05_interview_prep)
-Crush the System Design Interview.
-- 7+ Real-world Questions (Rate Limiter, Vector DB, Crawler, etc.)
-- Optimal vs Bad solutions.
+Most System Design resources are static diagrams. This repository is **executable**.
+We simulate **Race Conditions**, **Database Sharding**, **Consistent Hashing**, **LLM Inference**, and **Distributed Transactions** right in your terminal.
 
 ---
-## 🚀 How to use this repo
-1.  **Setup**: Run `make setup`.
-2.  **Start**: Run `make run`.
-3.  **Clean**: Run `make clean` to reset.
 
-Happy Coding!
+## 🚀 What's Inside?
+
+### 1. Python Essentials for Scale
+*   **Concurrency**: Threads vs Processes, AsyncIO Event Loops, and GIL limitations.
+*   **Thread Safety**: Locks, Semaphores, and Deadlock simulations (Dining Philosophers).
+
+### 2. High Level Design (HLD) & Resiliency
+*   **Scalability**: Vertical vs Horizontal Scaling, Load Balancing algorithms.
+*   **Distributed Data**: CAP Theorem, Replication Lag, Sharding (Range vs Hash), and **Saga Pattern**.
+*   **Resiliency**: Circuit Breakers (Netflix Hystrix), Retry with Jitter, and **Chaos Engineering**.
+*   **Advanced Structures**: Bloom Filters, HyperLogLog, and **Geospatial QuadTrees** (Uber).
+
+### 3. Advanced AI Architecture (SOTA)
+*   **Production Inference**: **vLLM** (Continuous Batching), **KV Caching** (PagedAttention), and **LoRA** Adapters.
+*   **Recommender Systems**: **Two-Tower Architecture** (YouTube/Netflix style).
+*   **RAG Deep Dive**: Vector Indexing (HNSW), Chunking strategies, and Embeddings.
+
+### 4. ⚔️ The Interview Gauntlet (15+ Real Questions)
+We answer the most frequent "Big Tech" interview questions with **Bad (Naive)** vs **Optimal (Scaled)** code implementations.
+
+| Component | The "Naive" Way (Fail) | The "Optimal" Way (Pass) |
+| :--- | :--- | :--- |
+| **Q4. WhatsApp** | Polling DB every 1s | WebSockets + Store-and-Forward |
+| **Q6. News Feed** | Pull Model (Slow Read) | Push Model (Fan-out on Write) |
+| **Q7. Google Drive** | Re-uploading 1GB Files | Block-level Deduplication |
+| **Q8. YouTube** | Sending full 4K.mp4 | Adaptive Bitrate (HLS/DASH) |
+| **Q9. Leaderboard** | `ORDER BY score` | Redis Sorted Sets (SkipList) |
+| **Q10. Ticketmaster** | Race Condition (Oversell) | Optimistic Locking / Lua Scripts |
+| **Q11. Analytics** | INSERT every click | Stream Windows (Flink/Spark) |
+| **Q12. Trending** | HashMap (OOM) | Count-Min Sketch (Probabilistic) |
+| **Q13. Kafka** | In-Memory Queue | Distributed Append-Only Log |
+| **Q15. Payments** | Retrying on Timeout | Idempotency Keys |
+
+---
+
+## 🏢 Real World Architecture References
+We don't just teach theory. We show you exactly where these patterns are used:
+*   **Uber/Google Maps**: QuadTrees & Geohashing.
+*   **Netflix**: Chaos Monkey & Hystrix.
+*   **Discord**: Consistent Hashing (Ring).
+*   **Amazon**: Saga Pattern for Order Fulfillment.
+*   **Apple Intelligence**: LoRA Adapters for On-Device AI.
+*   **YouTube**: Two-Tower Neural Networks for Recommendations.
+
+---
+
+## 🛠️ How to Run
+
+1.  **Setup**:
+    ```bash
+    make setup
+    ```
+
+2.  **Start Learning**:
+    ```bash
+    make run
+    ```
+    *(Navigate the CLI menu to choose lessons)*
+
+3.  **Clean Up**:
+    ```bash
+    make clean
+    ```
+
+---
+
+*Built for Engineers, by Engineers.*
