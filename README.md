@@ -3,7 +3,6 @@
 ![Build Status](https://github.com/Fleonex-dev/System-Design/actions/workflows/ci.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)
 
-
 > **"Show, Don't Just Tell."**
 > A personal collection of verifiable, code-first System Design patterns.
 
@@ -49,7 +48,7 @@ A set of common interview questions implemented with both "Naive" (Bad) and "Opt
 ---
 
 ## 🏢 Real World Architecture References
-We don't just teach theory. We show you exactly where these patterns are used:
+I included references to where these patterns are used in production systems:
 *   **Uber/Google Maps**: QuadTrees & Geohashing.
 *   **Netflix**: Chaos Monkey & Hystrix.
 *   **Discord**: Consistent Hashing (Ring).
@@ -85,7 +84,7 @@ We don't just teach theory. We show you exactly where these patterns are used:
 ---
 
 ## 🤝 Contributing
-We love contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our **Branch & Merge** workflow.
+Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on the workflow.
 1.  Fork the repo
 2.  Create your feature branch (`git checkout -b feat/amazing-feature`)
 3.  Run tests (`make test`)
