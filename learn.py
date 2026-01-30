@@ -99,6 +99,7 @@ COURSE = [
                 "lessons": [
                     {"file": "01_circuit_breaker.py", "title": "Circuit Breaker"},
                     {"file": "02_retry_backoff.py", "title": "Retry with Backoff & Jitter"},
+                    {"file": "03_chaos_engineering.py", "title": "Chaos Engineering (Netflix Monkey)"},
                 ]
             },
             {
@@ -118,6 +119,7 @@ COURSE = [
                     {"file": "02_sharding_strategies.py", "title": "Sharding (Range vs Hash)"},
                     {"file": "03_cap_theorem.py", "title": "CAP Theorem Simulation"},
                     {"file": "04_distributed_locking.py", "title": "Distributed Locks (Redis)"},
+                    {"file": "05_saga_pattern.py", "title": "Saga Pattern (Distributed Tx)"},
                 ]
             },
             {
@@ -198,6 +200,7 @@ COURSE = [
                 "lessons": [
                     {"file": "01_notification_service.py", "title": "Notification System (Pub/Sub)"},
                     {"file": "02_distributed_scheduler.py", "title": "Distributed Scheduler (Cron)"},
+                    {"file": "03_geospatial_index.py", "title": "Geospatial Index (QuadTree/Uber)"},
                 ]
             },
             {"file": "Q1_RateLimiter/optimal.py", "title": "Q1: Rate Limiter"},
