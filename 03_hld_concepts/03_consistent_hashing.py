@@ -96,4 +96,8 @@ if __name__ == "__main__":
     run_the_screwup()
     run_the_fix()
     
-    print("\n🏆 Conclusion: Consistent Hashing allows elastic scaling without downtime.")
+    print("\n🏆 Insight: Consistent Hashing minimizes data movement when nodes are added/removed.")
+    print("   🏢 Real World: **Discord** uses this for their Chat Ring Servers.")
+    print("   **Amazon DynamoDB** uses this to partition data across storage nodes.")
+    print("   **Cassandra** uses 'Virtual Nodes' (vnodes) on top of this ring.")
+```

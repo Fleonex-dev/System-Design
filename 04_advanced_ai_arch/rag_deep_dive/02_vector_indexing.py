@@ -58,3 +58,6 @@ if __name__ == "__main__":
     
     # Search
     search_graph(nodes[0], [0.5, 0.5])
+
+    print("\n🏆 Insight: HNSW (Hierarchical Navigable Small World) is the SOTA graph algo.")
+    print("   🏢 Real World: Powering **Facebook FAISS**, **Pinecone**, **Weaviate**, and **ElasticSearch** vectors.")
