@@ -144,6 +144,24 @@ COURSE = [
             {"file": "00_what_is_a_vector.py", "title": "0A. What is a Vector? (Embeddings)"},
             {"file": "00_llm_mechanics.py", "title": "0B. LLM Mechanics (Probabilities)"},
             {
+                "title": "🏭 Production Inference (ChatGPT Stack)",
+                "type": "submodule",
+                "path": "production_inference",
+                "lessons": [
+                    {"file": "01_kv_cache.py", "title": "KV Cache (PagedAttention)"},
+                    {"file": "02_continuous_batching.py", "title": "Continuous Batching (vLLM)"},
+                    {"file": "03_lora_adapters.py", "title": "LoRA Adapters (Multi-Tenant)"},
+                ]
+            },
+            {
+                "title": "📺 Recommender Systems (Netflix Stack)",
+                "type": "submodule",
+                "path": "recsys",
+                "lessons": [
+                    {"file": "01_two_tower_arch.py", "title": "Two-Tower Architecture"},
+                ]
+            },
+            {
                 "title": "✂️ RAG Deep Dive (Chunking/Vectors)",
                 "type": "submodule",
                 "path": "rag_deep_dive",
@@ -153,7 +171,7 @@ COURSE = [
                 ]
             },
             {
-                "title": "📉 AI Optimization",
+                "title": "📉 AI Optimization (Internals)",
                 "type": "submodule",
                 "path": "optimization",
                 "lessons": [
@@ -161,7 +179,7 @@ COURSE = [
                     {"file": "03_inference_optimization.py", "title": "Speculative Decoding (Moved)"},
                 ]
             },
-            {"file": "01_rag_pipeline_optimization.py", "title": "RAG Optimization"},
+            {"file": "01_rag_pipeline_optimization.py", "title": "RAG Optimization (Pipeline)"},
             {"file": "02_agent_orchestrator.py", "title": "Agent Orchestration"},
             {"file": "04_mixture_of_experts.py", "title": "Mixture of Experts"},
             {"file": "05_reasoning_search.py", "title": "Reasoning (Tree of Thoughts)"},
