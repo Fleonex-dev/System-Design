@@ -67,7 +67,12 @@ We don't just teach theory. We show you exactly where these patterns are used:
     ```
     *(Navigate the CLI menu to choose lessons)*
 
-3.  **Clean Up**:
+
+3.  **Run Tests**:
+    ```bash
+    make test
+    ```
+4.  **Clean**:
     ```bash
     make clean
     ```

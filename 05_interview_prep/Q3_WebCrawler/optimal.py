@@ -24,6 +24,11 @@ class CrawlerWorker(threading.Thread):
                 return # Done
             
             if url in self.visited: continue
+            
+            # STOP condition for simulation
+            if len(self.visited) > 20:
+                return
+
             self.visited.add(url) # In prod, use Bloom Filter here
             
             print(f"✅ [Worker {self.ident}] Processing {url}")

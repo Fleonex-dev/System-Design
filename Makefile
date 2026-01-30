@@ -1,8 +1,9 @@
-.PHONY: help setup run clean lint
+.PHONY: help setup run clean lint test
 
 VENV := venv
 PYTHON := $(VENV)/bin/python3
 PIP := $(VENV)/bin/pip
+ACTIVATE := . $(VENV)/bin/activate
 
 default: run
 
@@ -29,3 +30,7 @@ clean: ## Remove venv and cache files
 
 lint: ## Check code quality
 	@$(PYTHON) -m pylint **/*.py || true
+
+test: ## Run the test suite
+	@$(PYTHON) -m pytest tests/
+
