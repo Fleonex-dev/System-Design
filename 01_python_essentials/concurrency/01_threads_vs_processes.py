@@ -49,17 +49,38 @@ def run_processes():
     
     print(f"✅ [Processes] Time: {time.time() - start:.2f}s (True Parallelism)")
 
+def io_task():
+    time.sleep(1) # Simulating Network Call (GIL released during sleep)
+
+def run_io_comparison():
+    print("\n--- 🧪 I/O BOUND COMPARISON ---")
+    print("Task: 4 Network calls (1s each).")
+    
+    # Serial
+    start = time.time()
+    for _ in range(4): io_task()
+    print(f"🐢 [Serial] Time: {time.time() - start:.2f}s")
+    
+    # Threads (Good for I/O)
+    start = time.time()
+    threads = [threading.Thread(target=io_task) for _ in range(4)]
+    for t in threads: t.start()
+    for t in threads: t.join()
+    print(f"🚀 [Threads] Time: {time.time() - start:.2f}s (Threads WORK for I/O!)")
+
 if __name__ == "__main__":
     print(f"🧪 CPU: {os.cpu_count()} Cores available.")
-    print("--- COMPARISON ---")
     
+    print("\n--- 🧠 CPU BOUND COMPARISON ---")
     # 1. Serial (Baseline)
     start = time.time()
-    cpu_heavy_task(50_000_000)
-    cpu_heavy_task(50_000_000)
+    cpu_heavy_task(10_000_000)
+    cpu_heavy_task(10_000_000)
     print(f"🐢 [Serial] Time: {time.time() - start:.2f}s")
     
     run_threads()
     run_processes()
+    
+    run_io_comparison()
     
     print("\n🏆 Rule of Thumb: Use Threads for I/O (Network/Disk). Use Processes for CPU (Math/Data).")

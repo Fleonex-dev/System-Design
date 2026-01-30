@@ -31,6 +31,9 @@ COURSE = [
                     {"file": "02_async_io.py", "title": "2. AsyncIO (Event Loop)"},
                     {"file": "03_race_conditions.py", "title": "3. Race Conditions (Locks)"},
                     {"file": "04_producer_consumer.py", "title": "4. Producer-Consumer (Queues)"},
+                    {"file": "05_build_event_loop.py", "title": "5. Build an Event Loop (Internals)"},
+                    {"file": "06_cpu_offloading.py", "title": "6. CPU Offloading (Blocking code)"},
+                    {"file": "07_structured_concurrency.py", "title": "7. Structured Concurrency (TaskGroups)"},
                 ]
             },
             {"file": "02_typing.py", "title": "Typing (Pydantic vs Dicts)"},
