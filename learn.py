@@ -93,11 +93,29 @@ COURSE = [
         "lessons": [
             {"file": "00_scaling_101.py", "title": "0. Scaling 101 (Vertical vs Horizontal)"},
             {
+                "title": "🛡️ Resiliency Patterns",
+                "type": "submodule",
+                "path": "resiliency",
+                "lessons": [
+                    {"file": "01_circuit_breaker.py", "title": "Circuit Breaker"},
+                    {"file": "02_retry_backoff.py", "title": "Retry with Backoff & Jitter"},
+                ]
+            },
+            {
+                "title": "🔮 Advanced Data Structures",
+                "type": "submodule",
+                "path": "advanced_structures",
+                "lessons": [
+                    {"file": "01_bloom_filter.py", "title": "Bloom Filter (Probabilistic Set)"},
+                ]
+            },
+            {
                 "title": "💾 Distributed Data (Interviews)",
                 "type": "submodule",
                 "path": "distributed_data",
                 "lessons": [
                     {"file": "01_replication_lag.py", "title": "Replication Lag (Consistency)"},
+                    {"file": "02_sharding_strategies.py", "title": "Sharding (Range vs Hash)"},
                     {"file": "03_cap_theorem.py", "title": "CAP Theorem Simulation"},
                     {"file": "04_distributed_locking.py", "title": "Distributed Locks (Redis)"},
                 ]
@@ -114,6 +132,7 @@ COURSE = [
             {"file": "02_semantic_caching.py", "title": "2. Semantic Caching"},
             {"file": "03_consistent_hashing.py", "title": "3. Consistent Hashing"},
             {"file": "04_distributed_id.py", "title": "4. Distributed IDs"},
+            {"file": "05_grpc_vs_rest.py", "title": "5. gRPC vs REST (Binary vs JSON)"},
             {"file": "challenge_solution.py", "title": "🏆 Capstone Challenge Solution"}
         ]
     },
