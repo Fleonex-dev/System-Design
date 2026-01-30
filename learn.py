@@ -211,6 +211,22 @@ COURSE = [
             {"file": "Q3_WebCrawler/optimal.py", "title": "Q3: Web Crawler (BFS)"},
             {"file": "Q4_ChatSystem/optimal.py", "title": "Q4: Chat System (WhatsApp)"},
             {"file": "Q5_MetricsMonitoring/optimal.py", "title": "Q5: Metrics (Datadog)"},
+            
+            # Batch A: Consumer Apps
+            {"file": "Q6_NewsFeed/optimal.py", "title": "Q6: News Feed (Push vs Pull)"},
+            {"file": "Q7_GoogleDrive/optimal.py", "title": "Q7: Google Drive (Block Sync)"},
+            {"file": "Q8_YouTube/optimal.py", "title": "Q8: YouTube (Adaptive Streaming)"},
+            {"file": "Q9_GamingLeaderboard/optimal.py", "title": "Q9: Leaderboards (Redis ZSet)"},
+
+            # Batch B: Concurrency
+            {"file": "Q10_Ticketmaster/optimal.py", "title": "Q10: Ticketmaster (Locking)"},
+            {"file": "Q11_AdClickAggregator/optimal.py", "title": "Q11: Stream Processing (Windows)"},
+            {"file": "Q12_TrendingTopics/optimal.py", "title": "Q12: Trending Topics (Count-Min)"},
+            
+            # Batch C: Infra
+            {"file": "Q13_MessageQueue/optimal.py", "title": "Q13: Kafka (Distributed Log)"},
+            {"file": "Q14_DistributedSearch/optimal.py", "title": "Q14: Search (Inverted Index)"},
+            {"file": "Q15_PaymentSystem/optimal.py", "title": "Q15: Payments (Idempotency)"},
         ]
     }
 ]
