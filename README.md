@@ -1,14 +1,15 @@
-# 🏗️ Interactive System Design Masterclass
+# 🏗️ System Design Patterns & Python Implementation
 
 ![Build Status](https://github.com/Fleonex-dev/System-Design/actions/workflows/ci.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)
 
 
 > **"Show, Don't Just Tell."**
-> A hands-on, code-first course to master scalable systems, tailored for Senior Engineering Interviews.
+> A personal collection of verifiable, code-first System Design patterns.
 
-Most System Design resources are static diagrams. This repository is **executable**.
-We simulate **Race Conditions**, **Database Sharding**, **Consistent Hashing**, **LLM Inference**, and **Distributed Transactions** right in your terminal.
+Most System Design resources are static diagrams. This repository aims to make these concepts **executable** to understand how they actually work under the hood.
+I built this to educate myself on **Race Conditions**, **Database Sharding**, **Consistent Hashing**, and **Distributed Transactions** by simulating them in Python.
+
 
 ---
 
@@ -29,8 +30,8 @@ We simulate **Race Conditions**, **Database Sharding**, **Consistent Hashing**, 
 *   **Recommender Systems**: **Two-Tower Architecture** (YouTube/Netflix style).
 *   **RAG Deep Dive**: Vector Indexing (HNSW), Chunking strategies, and Embeddings.
 
-### 4. ⚔️ The Interview Gauntlet (15+ Real Questions)
-We answer the most frequent "Big Tech" interview questions with **Bad (Naive)** vs **Optimal (Scaled)** code implementations.
+### 4. ⚔️ Interview Prep & Experiments
+A set of common interview questions implemented with both "Naive" (Bad) and "Optimal" (Scaled) approaches to demonstrate the difference.
 
 | Component | The "Naive" Way (Fail) | The "Optimal" Way (Pass) |
 | :--- | :--- | :--- |
@@ -94,4 +95,4 @@ We love contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for detail
 
 ---
 
-*Built for Engineers, by Engineers.*
+*Created for self-education and shared for the community.*
