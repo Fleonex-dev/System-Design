@@ -7,25 +7,45 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# 🛑 Concurrency: Cancel previous runs on the same branch
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
+    name: Test (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
+    timeout-minutes: 5 # ⚡ Fail fast if hanging
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
 
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
       with:
-        python-version: "3.10"
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip' # ⚡ Cache pip dependencies automatically
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest requests aiohttp
-        # Install project requirements if any (currently standard lib mostly)
-        # pip install -r requirements.txt 
+        pip install -r requirements.txt
+        pip install pylint pytest-xdist # xdist for parallel tests
 
-    - name: Run Tests
+    - name: Lint (Syntax Check)
       run: |
-        pytest tests/
+        # Only check for fatal errors (E) and syntax warnings (W)
+        # We assume 'bad.py' files might have issues, so we treat this as advisory or selective
+        # For now, let's just check valid python syntax
+        python -m compileall . -q
+
+    - name: Run Tests (Parallel)
+      run: |
+        # ⚡ Run tests in parallel (-n auto)
+        pytest -n auto tests/

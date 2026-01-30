@@ -2,3 +2,5 @@ requests
 simple_chalk
 rich
 pytest
+pytest-xdist
+pylint
