@@ -194,18 +194,23 @@ COURSE = [
         "path": "05_interview_prep",
         "lessons": [
             {
-                "title": "🧱 Common Components",
+                "title": "🧱 Common Components (Coding Round)",
                 "type": "submodule",
                 "path": "common_components",
                 "lessons": [
                     {"file": "01_notification_service.py", "title": "Notification System (Pub/Sub)"},
                     {"file": "02_distributed_scheduler.py", "title": "Distributed Scheduler (Cron)"},
                     {"file": "03_geospatial_index.py", "title": "Geospatial Index (QuadTree/Uber)"},
+                    {"file": "04_lru_cache.py", "title": "LRU Cache (Dict + DoublyLL)"},
+                    {"file": "05_trie_autocomplete.py", "title": "Trie (Prefix Tree/Typeahead)"},
+                    {"file": "06_token_bucket.py", "title": "Token Bucket (Rate Limiter Algo)"},
                 ]
             },
-            {"file": "Q1_RateLimiter/optimal.py", "title": "Q1: Rate Limiter"},
-            {"file": "Q2_URLShortener/optimal.py", "title": "Q2: URL Shortener"},
-            {"file": "Q3_WebCrawler/optimal.py", "title": "Q3: Web Crawler"}
+            {"file": "Q1_RateLimiter/optimal.py", "title": "Q1: Rate Limiter (Redis)"},
+            {"file": "Q2_URLShortener/optimal.py", "title": "Q2: URL Shortener (Base62)"},
+            {"file": "Q3_WebCrawler/optimal.py", "title": "Q3: Web Crawler (BFS)"},
+            {"file": "Q4_ChatSystem/optimal.py", "title": "Q4: Chat System (WhatsApp)"},
+            {"file": "Q5_MetricsMonitoring/optimal.py", "title": "Q5: Metrics (Datadog)"},
         ]
     }
 ]
