@@ -44,5 +44,3 @@ Crush the System Design Interview.
 3.  **Clean**: Run `make clean` to reset.
 
 Happy Coding!
-
-Happy Coding!

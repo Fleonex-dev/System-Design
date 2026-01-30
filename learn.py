@@ -13,13 +13,26 @@ import questionary
 # ==========================================
 # 🎓 COURSE CONFIGURATION
 # ==========================================
+# ==========================================
+# 🎓 COURSE CONFIGURATION
+# ==========================================
 COURSE = [
     {
         "id": "01",
         "title": "🐍 Python Essentials",
         "path": "01_python_essentials",
         "lessons": [
-            {"file": "01_concurrency.py", "title": "Concurrency (Async vs Sync)"},
+            {
+                "title": "⚡ Concurrency Deep Dive (Sub-Module)",
+                "type": "submodule",
+                "path": "concurrency", # Relative to parent path
+                "lessons": [
+                    {"file": "01_threads_vs_processes.py", "title": "1. Threads vs Processes (The GIL)"},
+                    {"file": "02_async_io.py", "title": "2. AsyncIO (Event Loop)"},
+                    {"file": "03_race_conditions.py", "title": "3. Race Conditions (Locks)"},
+                    {"file": "04_producer_consumer.py", "title": "4. Producer-Consumer (Queues)"},
+                ]
+            },
             {"file": "02_typing.py", "title": "Typing (Pydantic vs Dicts)"},
             {"file": "03_generators.py", "title": "Generators (Stream vs List)"},
             {"file": "04_context_managers.py", "title": "Context Managers (Safety)"},
@@ -116,7 +129,9 @@ def run_script(path, script_name):
     console.print(f"[green]🚀 Running {script_name}...[/green]\n")
     try:
         # Run and stream output
-        subprocess.run([sys.executable, script_name], cwd=path)
+        # Use python from env
+        env = os.environ.copy()
+        subprocess.run([sys.executable, script_name], cwd=path, env=env)
     except Exception as e:
         console.print(f"[red]Error: {e}[/red]")
     
@@ -125,6 +140,10 @@ def run_script(path, script_name):
 
 def view_code(path, script_name):
     full_path = os.path.join(path, script_name)
+    if not os.path.exists(full_path):
+        console.print(f"[red]File not found: {full_path}[/red]")
+        return
+        
     with open(full_path, "r") as f:
         code = f.read()
     
@@ -134,16 +153,10 @@ def view_code(path, script_name):
     console.print("\n[dim]Press Enter to return...[/dim]")
     input()
 
-def lesson_menu(module, lesson):
+def lesson_menu(base_path, lesson):
     while True:
         render_header()
-        console.print(f"[bold yellow]Module:[/bold yellow] {module['title']}")
         console.print(f"[bold green]Lesson:[/bold green] {lesson['title']}\n")
-        
-        # Determine "Bad" counterpart name (usually lesson filename is '01_x.py', bad might be inside or implied)
-        # For this repo, 'bad' is usually the SAME file's first half or a separate function.
-        # But wait, our curriculum put 'run_the_screwup' inside the SAME file.
-        # So we just run the file.
         
         action = questionary.select(
             "What do you want to do?",
@@ -157,9 +170,29 @@ def lesson_menu(module, lesson):
         if action == "🔙 Back":
             break
         elif action == "🚀 Run Script (See Bad vs Good)":
-            run_script(module['path'], lesson['file'])
+            run_script(base_path, lesson['file'])
         elif action == "📄 View Code":
-            view_code(module['path'], lesson['file'])
+            view_code(base_path, lesson['file'])
+
+def submodule_menu(base_path, submodule):
+    sub_path = os.path.join(base_path, submodule['path'])
+    while True:
+        render_header()
+        console.print(f"[bold magenta]Sub-Module:[/bold magenta] {submodule['title']}\n")
+        
+        choices = [l['title'] for l in submodule['lessons']] + ["🔙 Back"]
+        
+        selection = questionary.select(
+            "Select a Lesson:",
+            choices=choices
+        ).ask()
+        
+        if selection == "🔙 Back":
+            break
+            
+        # Find lesson
+        lesson = next(l for l in submodule['lessons'] if l['title'] == selection)
+        lesson_menu(sub_path, lesson)
 
 def module_menu(module):
     while True:
@@ -167,11 +200,11 @@ def module_menu(module):
         console.print(f"[bold yellow]Module:[/bold yellow] {module['title']}\n")
         
         choices = ["📖 Read Teacher Guide (README)"] + \
-                  [f"{l['title']}" for l in module['lessons']] + \
+                  [l['title'] for l in module['lessons']] + \
                   ["🔙 Back to Main Menu"]
                   
         selection = questionary.select(
-            "Select a Lesson:",
+            "Select a Topic:",
             choices=choices
         ).ask()
         
@@ -181,8 +214,13 @@ def module_menu(module):
             show_readme(module['path'])
         else:
             # Find lesson object
-            lesson = next(l for l in module['lessons'] if l['title'] == selection)
-            lesson_menu(module, lesson)
+            item = next(l for l in module['lessons'] if l['title'] == selection)
+            
+            if item.get("type") == "submodule":
+                submodule_menu(module['path'], item)
+            else:
+                lesson_menu(module['path'], item)
+
 
 def main_menu():
     while True:
